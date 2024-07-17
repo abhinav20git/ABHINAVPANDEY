@@ -3,8 +3,7 @@ export  const middleware=(request)=>{
 
 
     const pathVaiable = request.nextUrl.pathname;
-    // console.log({pathVaiable});
-    const publicPath = ['/register','/update-password','/forget-password','/login'];
+    const publicPath = ['/register','/login'];
 
     const auth = request.cookies.get("token") || '';
 
