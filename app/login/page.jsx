@@ -62,15 +62,13 @@ const LoginPage = () => {
 
                         </div>
                         <div className="mb-3">
-                            <button disabled={loading} type='submit' className="w-full bg-green-500 rounded disabled:bg-green-200 text-white py-3 font-bold">{loading? 'loading...':'Login'}</button>
+                            <button disabled={loading} type='submit' className="w-full bg-blue-300 rounded  text-white py-3 font-bold">{loading? 'loading...':'Login'}</button>
                         </div>
                         <div className="mb-3">
                             <p className='text-center '>Don{"'"}t Have An Account ? <Link href={'/register'} className="text-blue-500 underline">Register</Link></p>
                         </div>
 
-                        <div className="mt-6">
-                            <p className='text-center '>Forget <Link href={'/forget-password'} className="text-blue-500 underline">Password</Link></p>
-                        </div>
+                        
                     </Form>
                     </Formik>
                 </div>

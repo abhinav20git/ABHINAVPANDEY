@@ -15,17 +15,6 @@ export const POST = async(request)=>{
         return
     }
 
-
-    const isMatch = await existUser.ConfirmPassword(password);
-    if(!isMatch){
-        return NextResponse.json({msg:null,error:"Invalid Credentails"},{
-            status:400
-        })
-        return
-    }
-
-    // token
-
     const token = await GenerateToken(existUser);
 
     const reponse = NextResponse.json({error:null,msg:"User Login Successfully"},{

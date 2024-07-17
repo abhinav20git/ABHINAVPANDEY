@@ -60,7 +60,7 @@ const RegisterPage = () => {
 
                         </div>
                         <div className="mb-3">
-                            <button type='submit' className="w-full bg-green-500 rounded text-white py-3 font-bold">Register</button>
+                            <button type='submit' className="w-full bg-blue-300 rounded text-white py-3 font-bold">Register</button>
                         </div>
                         <div className="mb-3">
                             <p className='text-center '>Already Have An Account ? <Link href={'/login'} className="text-blue-500 underline">Login</Link></p>

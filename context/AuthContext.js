@@ -10,7 +10,7 @@ export const useAuth = ()=>{
 
 export const AuthProvider= ({children})=>{
 const router = useRouter()
-
+const [user,setUser] = useState(null);
     const fetchData = async()=>{
 
         try{
@@ -39,11 +39,11 @@ const router = useRouter()
 
 
     const pathname = usePathname()
-    const [user,setUser] = useState(null);
+   
 
     
     useEffect(()=>{
-    const isPrivatePath = ['/','/update-profile']
+    const isPrivatePath = ['/']
         if(isPrivatePath.includes(pathname)){
             fetchData()
         }else{

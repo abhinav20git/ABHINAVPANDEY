@@ -4,8 +4,8 @@ import { UserModel } from "@/lib/models/User.models";
 import { NextResponse } from "next/server";
 
 ConnectDB();
-export const PUT = async(request)=>{
-const {name,email} =await request.json()
+export const GET = async(request)=>{
+
 
     const auth = request.cookies.get("token") || '';
 
@@ -23,9 +23,7 @@ const {name,email} =await request.json()
         return
     }
 
-    const existUser = await UserModel.findByIdAndUpdate(userId,{
-        $set:{name,email}
-    });
+    const existUser = await UserModel.findById(userId).select("-password");
     
     if(!existUser){
         return NextResponse.json({msg:null,error:"User Does not Exist"},{
@@ -34,7 +32,7 @@ const {name,email} =await request.json()
         return
     }
 
-    return NextResponse.json({error:null,msg:"Profile Updated"},{
+    return NextResponse.json({error:null,msg:"data fetched",user:existUser},{
         status:200
     })
 }

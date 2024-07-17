@@ -23,9 +23,6 @@ export  const middleware=(request)=>{
 export const config={
     matcher:[
         '/',
-        '/update-profile',
-        '/forget-password',
-        '/update-password',
         '/register',
             '/login'
     ]
